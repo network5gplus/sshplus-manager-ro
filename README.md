@@ -24,3 +24,11 @@ Rulează această comandă pe orice server unde ai deja instalat SSH Plus Manage
 ```bash
 sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/network5gplus/sshplus-manager-ro/main/update.sh)"
 ```
+### 3. Configurare Payload
+Payload stabil pentru porturile 80 și 443
+Copiază codul de mai jos și înlocuiește 
+`<DOMENIU_VPS>` și `<SNI>` cu datele tale:
+
+```text
+GET / HTTP/1.1[crlf]Host: <DOMENIU_VPS>[crlf]X-Online-Host: <SNI>[crlf]X-Forward-Host: <SNI>[crlf]User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36[crlf]Upgrade: websocket[crlf]Connection: Upgrade[crlf][crlf]
+```
